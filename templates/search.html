@@ -1,0 +1,46 @@
+{% extends 'base1.html' %}
+{% load static %}
+
+{% block name %}
+
+      <h1 style="margin-bottom: 5%;"></h1>
+         <div class="home-container" style="margin-bottom: 2%;">
+           <h3 style="text-align: center;"> Search Results </h3>
+             <div class="underline"></div>
+            <div class="page-baby">
+                {% if page %}
+                    {% for instance in page %}
+                        <div class="head-container">
+                          <div style="background: url('{{ instance.image.url }}');
+                               background-size: cover; background-position: center;" class="page-home">
+                          </div>
+
+                          <div>
+                               <div id="instance">
+                                   <h4>{{ instance.title }}</h4>
+                                   <div class="instance">
+                                     <p>{{ instance.tool1 }}</p>
+                                     <p>{{ instance.tool2 }}</p>
+                                     <p>{{ instance.tool3 }}</p>
+                                   </div>
+                               </div>
+                               <div style="height: 5%;
+                                background: var(--clr-primary-10); display: flex; justify-content: space-between;">
+                                   <a href="{{ instance.link1 }}" class="btn" style="margin: 10px;"><i class="fab fa-github"></i></a>
+                                   <a href="{{ instance.link2 }}" class="btn"  style="margin: 10px;"><i class="fa fa-external-link"></i></a>
+                               </div>
+                          </div>
+                        </div>
+                  {% endfor %}
+                {% else %}
+                     <h3 style="text-align: center;">Project not found, Try again!!!</h3>
+                {% endif %}
+
+            </div>
+         </div>
+{% if page %}
+  {% include 'footer.html' %}
+{% else %}
+   <h1 style="margin-bottom: 2%;"></h1>
+{% endif %}
+{% endblock %}

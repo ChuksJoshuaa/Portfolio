@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+     {% if about %}
+        {% for instance in about %}
+         <section class="about-page">
+            <div class="sect-center about-center">
+              <img src={{instance.image.url}} alt={{instance.title}} class="about-img-svg" />
+              <article class="about-text">
+                  <h4>{{ instance.title }}</h4>
+                  <div class="underline"></div>
+                <p class="hole">{{ instance.description }}</p>
+                <div class="stance">
+                    <p>Javascript</p>
+                    <p>Python</p>
+                    <p>React</p>
+                    <p>Django</p>
+                    <p>Bootstrap</p>
+                    <p>Git</p>
+                    <p>Github</p>
+                    <p>Material ui</p>
+                    <p>Redis</p>
+                    <p>Html/Css</p>
+                    <p>Mysql</p>
+                    <p>Postgres</p>
+                    <p>Docker</p>
+                    <p>Aws</p>
+                </div>
+              </article>
+            </div>
+          </section>
+        {% endfor %}
+     {% endif %}
+
+{% endblock %}

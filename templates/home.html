@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load emoji_tags %}
+
+{% block content %}
+    <header class="hero" style="margin-bottom: 5%;" id="home">
+       <div class="sage">
+          <div class="head-hero">
+            <div class="hero-home">
+                <article class="hero-info">
+                  <div>
+                      <p style="margin-bottom: 10%;"></p>
+                      <div class="underline"></div>
+                    <h1 class="anime">i'm Chuks</h1>
+                    <h3 class="sat"> Web/Python Developer</h3>
+                    <button class="btn"><a href="#contact" style="color: white;">
+                      contact me
+                    </a>
+                    </button>
+                  </div>
+                </article>
+              <div class="home-img">
+                <img width="600" src="{% static 'images/hero.jpg' %}" alt="portfolio" class="hero-img"/>
+              </div>
+           </div>
+          </div>
+       </div>
+    </header>
+
+    <div>
+        <div class="home-container" id="projects">
+            <h3 style="text-align: center;">Projects</h3>
+            <div class="underline"></div>
+           <div class="page-baby">
+                 {% if main %}
+                    {% for instance in main %}
+                    <div class="head-container">
+                      <div style="background: url('{{ instance.image.url }}');
+                           background-size: cover; background-position: center;" class="page-home">
+                      </div>
+
+                      <div>
+                           <div id="instance">
+                               <h4>{{ instance.title }}</h4>
+                               <div class="instance">
+                                 <p>{{ instance.tool1 }}</p>
+                                 <p>{{ instance.tool2 }}</p>
+                                 <p>{{ instance.tool3 }}</p>
+                               </div>
+                           </div>
+                           <div style="height: 5%;
+                            background: var(--clr-primary-10); display: flex; justify-content: space-between;">
+                               <a href="{{ instance.link1 }}" class="btn" style="margin: 10px;"><i class="fab fa-github"></i></a>
+                               <a href="{{ instance.link2 }}" class="btn"  style="margin: 10px;"><i class="fa fa-external-link"></i></a>
+                           </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                 {% endif %}
+           </div>
+           <div style="display: grid; place-items: center;">
+               <a href="{% url 'projects' %}" class="btn center-btn">All Projects</a>
+               <h1 style="margin-bottom: 3%;"></h1>
+          </div>
+        </div>
+    </div>
+    <section class="section bg-grey" id="services">
+      <h3 style="text-align: center;">Services</h3>
+       <div class="underline"></div>
+      <div class="section-center services-center">
+            <article  class="service">
+              <div class="service-icon"><i class="fa fa-code" aria-hidden="true"></i></div>
+              <h4 style="font-weight: 600;">Web Development</h4>
+              <div class="underline"></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates corrupti animi saepe quasi excepturi cupiditate
+                voluptate dolor sed obcaecati vero.
+              </p>
+            </article>
+            <article  class="service">
+              <div class="service-icon"><i class="fa fa-diamond" aria-hidden="true"></i></div>
+              <h4 style="font-weight: 600;">Web Design</h4>
+              <div class="underline"></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates corrupti animi saepe quasi excepturi cupiditate
+                voluptate dolor sed obcaecati vero.
+              </p>
+            </article>
+            <article  class="service">
+              <div class="service-icon"><i class="fa fa-android" aria-hidden="true"></i></div>
+              <h4 style="font-weight: 600;">Python Programming</h4>
+              <div class="underline"></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates corrupti animi saepe quasi excepturi cupiditate
+                voluptate dolor sed obcaecati vero.
+              </p>
+            </article>
+      </div>
+    </section>
+    <section class="contact-page" id="contact">
+        <h3 style="text-align: center;" >Contact</h3>
+       <div class="underline"></div>
+        <article class="contact-form">
+          <h3>get in touch</h3>
+          <form action="." method="POST">{% csrf_token %}
+            <div class="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="name"
+                class="form-control"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                class="form-control"
+              />
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="message"
+                class="form-control"
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn btn">
+              submit here
+            </button>
+          </form>
+        </article>
+      </section>
+{% endblock %}

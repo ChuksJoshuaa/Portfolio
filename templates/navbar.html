@@ -1,0 +1,27 @@
+{% load static %}
+
+  <nav id="nav">
+           <button class="sidebar-toggle" style="z-index: 9999;"><i class="fas fa-bars"></i></button>
+        <aside class="sidebar" id="nav-center">
+          <div class="sidebar-header">
+             <img width = "50px;" style = "border-radius: 60%;" src = "{% static 'images/head.jpg' %}"
+                       alt = "This is a logo" >
+             <button class="close-btn come"><i class="fas fa-times"></i></button>
+          </div>
+          <ul class="links" id="links">
+            <li><a href="{% url 'home' %}" class="coming"><i class="fa fa-home">home</i></a></li>
+            <li><a href="{% url 'about' %}"><i class="fa fa-check-circle">about</i></a></li>
+            <li><a href="{% url 'projects' %}" class="coming"><i class="fa fa-window-maximize">project</i></a></li>
+            <li><a href="/#services" class="coming"><i class="fa fa-snowflake-o">services</i></a></li>
+            <li><a href="/#contact" class="coming"><i class="fa fa-envelope">contact</i></a></li>
+          </ul>
+         <div>
+             <ul class="social-icons" id="social-icons">
+                 <li><a href="https://www.facebook.com/chuks.j.m"><i class="fab fa-facebook"></i></a></li>
+                 <li><a href="https://www.twitter.com/Chuksmbanaso"><i class="fab fa-twitter"></i></a></li>
+                 <li><a href="https://www.linkedin.com/in/chuks-mbanaso-5b931a164/"><i class="fab fa-linkedin"></i></a></li>
+                 <li><a href="https://github.com/ChuksMbanaso"><i class="fab fa-github"></i></a></li>
+             </ul>
+         </div>
+        </aside>
+       </nav>
