@@ -1,6 +1,6 @@
 Portfolio (Full Stack Frameworks with Django Project)
 
-> > Fully responsive Portfolio Application. From development to deployment.
+> > Fully responsive Portfolio Web Application. From development to deployment.
 
 <img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1642058481/media/Screenshot_7_jncgkk.png" title="Chuks Portfolio" alt="Chuks Porfolio Website">
 <img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1642058497/media/Screenshot_8_pl70ic.png" title="Chuks Portfolio" alt="Chuks Porfolio Website">
