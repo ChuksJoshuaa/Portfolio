@@ -134,9 +134,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'chuksmbanaso',
-    'API_KEY': '423979199723327',
-    'API_SECRET': 'ESQWs8zmwee3iCWooKfMQ4XqOi4'
+    'CLOUD_NAME': os.environ.get(CLOUD_NAME),
+    'API_KEY': os.environ.get(API_KEY),
+    'API_SECRET: os.environ.get(API_SECRET)
 }
 
 MESSAGE_TAGS = {
@@ -147,8 +147,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_PASSWORD = 'wmltsqwgdafjpniq'
-EMAIL_HOST_USER = 'chuksmbanasoj@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get(EMAIL_PASSWORD)
+EMAIL_HOST_USER = os.environ.get(EMAIL_USER)
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
